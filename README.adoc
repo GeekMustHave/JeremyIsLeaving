@@ -1,0 +1,25 @@
+= JeremyIsLeaving Web Site
+John HR Schuster <John.Schuster@PhoenixWorkGroup.com>
+V2.1b,01/07/2016:Just A web site
+
+This is just a simple web site to help manage a party for one of the Teradata DBA's who will be leaving us soon.
+
+== Introduction
+
+A simple Single Page Application (SPA) using the Bootstrap foundation.
+This will be a simple project using JSON data files for the registration and messages.
+
+== Specifications
+
+These are very open and loose specifications.
+
+* Bootstrap foundation
+* JSON data files for Registration and Messages
+* Lead page, pretty
+* Jeremy introduction with picture
+* Registration form section, simple name, e-mail, number of attendees
+* Who is attending, from registration section, in alpha order by name
+* Leave message form, simple  Name, Message
+* Message list, by date ascending order
+* Hosts list, to get credit
+* Footer section, PLL advertisement, Developers and social links to GeekMustHave
