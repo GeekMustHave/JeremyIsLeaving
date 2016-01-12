@@ -4,7 +4,7 @@
 * Comments: For smooth scrolling JSON posts for submitting gest requests and messages
 *******************************************/
 //jQuery for page smooth scrolling feature - requires jQuery Easing plugin
-$(function() {		
+$(function() {
 	PreLoadValues();
 	$('#btnOverview').bind('click', function(event) {
 		var $anchor = $(this);
@@ -12,41 +12,41 @@ $(function() {
 			scrollTop: $($anchor.attr('href')).offset().top
 		}, 1500, 'easeInOutExpo');
 		event.preventDefault();
-	}); 
+	});
 	$('#btnToTheParty').bind('click', function(event) {
 		var $anchor = $(this);
 		$('html, body').stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top
 		}, 1500, 'easeInOutExpo');
 		event.preventDefault();
-	}); 
+	});
 	$('#btnToLeaveMessage').bind('click', function(event) {
 		var $anchor = $(this);
 		$('html, body').stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top
 		}, 1500, 'easeInOutExpo');
 		event.preventDefault();
-	});    
+	});
 });
-function PreLoadValues(){	
+function PreLoadValues(){
 	$.getJSON("server/guests.json", function(json) {
-		$("#ulAttendingList").empty();		
-		$.each(json, function(idx, obj){ 
-			$('#ulAttendingList').append('<li class="list-group-item" >'+ obj.name + ', (' + obj.totalguests + ')' +'</li>');			
+		$("#ulAttendingList").empty();
+		$.each(json, function(idx, obj){
+			$('#ulAttendingList').append('<li class="list-group-item" >'+ obj.name + ', (' + obj.totalguests + ')' +'</li>');
 		});
 	});
-	
+
 	$.getJSON("server/messages.json", function(json) {
-		$("#ulMessageList").empty();		
-		$.each(json, function(idx, obj){ 
-			$('#ulMessageList').append('<li class="list-group-item" > <b>Message from:</b> '+ obj.name + ' &nbsp; &nbsp; &nbsp; <b>On:</b>&nbsp; ' + obj.messagedate.substring(0, 16) + ' <br />' + obj.message + '</li>');			
+		$("#ulMessageList").empty();
+		$.each(json, function(idx, obj){
+			$('#ulMessageList').append('<li class="list-group-item" > <b>Message from:</b> '+ obj.name + ' &nbsp; &nbsp; &nbsp; <b>On:</b>&nbsp; ' + obj.messagedate.substring(0, 16) + ' <br />' + obj.message + '</li>');
 		});
 	});
 }
 
 function mobileNavFunc(){
     // If it's an iPhone..
-    if( (navigator.platform.indexOf("iPhone") != -1) 
+    if( (navigator.platform.indexOf("iPhone") != -1)
         || (navigator.platform.indexOf("iPod") != -1)
         || (navigator.platform.indexOf("iPad") != -1))
          window.open("maps://maps.google.com/maps?q=314 E. Michigan Ave, Lansing, MI");
@@ -54,7 +54,7 @@ function mobileNavFunc(){
          window.open("http://maps.google.com/maps?q=314 E. Michigan Ave, Lansing, MI");
 }
 function showVideo(){
-	$('#myModal').modal('show'); 
+	//$('#myModal').modal('show'); 
 	return true;
 }
 function submitGuest()
@@ -63,11 +63,11 @@ function submitGuest()
 	var guestEmail = document.getElementById("guestEmail").value;
 	var guestTotalCount = document.getElementById("guestTotal").value;
 	/*if (guestName == '' || guestEmail =='' || guestTotalCount == ''){
-		$('#myModal').modal('show'); 
+		$('#myModal').modal('show');
 			document.getElementById("errorMsg").innerHTML = " Please enter your Name/Email & Guest  Count";
 			return true;
 	}*/
-	
+
 	var $myForm = $('#guestForm');
 	if (!$myForm[0].checkValidity()) {
 		// If the form is invalid, submit it. The form won't actually submit;
@@ -81,7 +81,7 @@ function submitGuest()
 			totalguests : guestTotalCount
 		}
 		//var params = JSON.stringify(object);
-		
+
 		$.ajax({
 			type: 'POST',
 			data: {params:object},
@@ -94,11 +94,11 @@ function submitGuest()
 				document.getElementById("guestTotal").value = '';
 				document.getElementById("lblGuest").innerHTML = ' Thanks...!'
 			}
-		}); 
-	}		
+		});
+	}
 }
 function submitMessage()
-{		
+{
 	var guestNameMsg = document.getElementById("guestNameMsg").value;
 	var guestMessage = document.getElementById("guestMessage").value;
 	var guestMessageDate = new Date();
@@ -110,14 +110,14 @@ function submitMessage()
 		$myForm.find(':submit').click();
 	}
 	else{
-		
+
 		var object = {
 			name: guestNameMsg,
 			message: guestMessage,
 			messagedate : guestMessageDate
 		}
 		var paramse = JSON.stringify(object);
-		
+
 		$.ajax({
 			type: 'POST',
 			data: {params:object},
@@ -129,6 +129,6 @@ function submitMessage()
 				document.getElementById("guestMessage").value = '';
 				document.getElementById("lblMessage").innerHTML = ' Thanks...!'
 			}
-		});   
+		});
 	}
 }
