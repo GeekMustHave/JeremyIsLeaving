@@ -23,3 +23,18 @@ These are very open and loose specifications.
 * Message list, by date ascending order
 * Hosts list, to get credit
 * Footer section, PLL advertisement, Developers and social links to GeekMustHave
+
+== Tools used
+
+This is a learning project where a number of new tools are being used.
+
+* ATOM text editor
+* GIT Plus package - Automates Local/Remote GIT processing
+* Remote Sync  FTP file updates  to the HOSTing service  BlueHost in this instance
+
+
+=== ATOM editor
+One of the setups for this project includes the use of the ATOM text editor.
+We want to be able to use one tool for GIT, GITHub and remote HOST FTP syncing.
+
+CAUTION:  The Remote Sync adds the password in plain text to the .JSON config file.

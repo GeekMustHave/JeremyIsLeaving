@@ -1,0 +1,14 @@
+{
+  "__comment": "This file controls the rmote sync, don't know if I like the password being in here",
+  "uploadOnSave": true,
+  "deleteLocal": false,
+  "hostname": "ftp.pwc-lms.com",
+  "target": "/public_html/JeremyIsLeaving",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "pwclmsco",
+  "password": "NewHorizons666!",
+  "transport": "ftp"
+}
