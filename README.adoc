@@ -57,3 +57,57 @@ You will need to use the GIT Bash command line to perform some of these function
   -rw-r--r-- 1 jschust2 197121 3243 Jan 12 21:41 id_rsa
   -rw-r--r-- 1 jschust2 197121  760 Jan 12 21:41 id_rsa.pub
   -rw-r--r-- 1 jschust2 197121 1199 Jan 12 21:53 known_hosts
+
+  If you don't have any SSH keys or you want to regenerate them then enter the following.
+  By using your e-mail it will mark the SSH key for better identification later.
+
+   ssh-keygen -t rsa -b 4096 -C "john.schuster@phoenixworkgroup.com"
+
+When prompted for a password, leave it blank, this will simplify your use of GIT.
+
+
+Make sure you are in the windows directory where the GIT repository is in and enter.
+
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+  $ git remote
+  JeremyIsLeavingWebSite  <--- This is the GITHub remote name
+
+Next we will set the GITHUB remote to use the SSH connection rather than the HTTPS connection.
+
+   jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+   $ git remote set-url JeremyIsLeavingWebSite git@github.com:GeekMustHave/JeremyIsLeaving.git
+
+Verify that it has been set correctly
+
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+  $ git remote -v
+  JeremyIsLeavingWebSite  git@github.com:GeekMustHave/JeremyIsLeaving.git (fetch)
+  JeremyIsLeavingWebSite  git@github.com:GeekMustHave/JeremyIsLeaving.git (push)
+
+Copy the SSH public key to the clipboard, in order to paste it into GitHub.
+
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+  $ cat < ~/.ssh/id_rsa.pub
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhOOgz1kSzQTa4sB6a5JMN
+  blah-blah-blah for many lines
+  == john.schuster@phoenixworkgroup.com
+
+Copy from the `ssh-rsa`  to the end of the e-mail address, this is your key, it is very long.
+
+Go to the GITHub website and login with your credentials.
+
+Profile-Picture->Settings->SSH Keys->Add SSH Keys
+
+Enter something to identify the SSH key like "Main Desktop Key".
+
+Paste the SSH key text you Copied into the Key field.
+
+Click `Add Key`, confirm the action with your GitHub password.
+
+Go back to the GITBash command line in order to test the connection.
+
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+  $ ssh -T git@github.com
+  Hi GeekMustHave! You've successfully authenticated, but GitHub does not provide shell access.
+
+Now your GIT BASH, GIT GIU and ATOM GIT Plus should all work fine.
