@@ -90,21 +90,27 @@ Copy the SSH public key to the clipboard, in order to paste it into GitHub.
   $ cat < ~/.ssh/id_rsa.pub
   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhOOgz1kSzQTa4sB6a5JMN
   blah-blah-blah for many lines
+  blah-blah-blah for many lines  blah-blah-blah for many lines
+  blah-blah-blah for many lines
+  lah-blah-blah for many lines
+  blah-blah-blah for many lines
+  blah-blah-blah for many lines
+  blah-blah-blah for many lines
   == john.schuster@phoenixworkgroup.com
 
-Copy from the `ssh-rsa`  to the end of the e-mail address, this is your key, it is very long.
+Copy from the `ssh-rsa`  to the end of the e-mail address, this is your public SSH key, it is very long.
 
 Go to the GITHub website and login with your credentials.
 
-Profile-Picture->Settings->SSH Keys->Add SSH Keys
+Then navigate to Profile-Picture->Settings->SSH Keys->Add SSH Keys
 
-Enter something to identify the SSH key like "Main Desktop Key".
+In the `Title` area enter something to identify the SSH key like "Main Desktop Key".
 
-Paste the SSH key text you Copied into the Key field.
+Paste the SSH key text you Copied earlier, into the `Key` field.
 
 Click `Add Key`, confirm the action with your GitHub password.
 
-Go back to the GITBash command line in order to test the connection.
+Go back to the Windows GITBash command line in order to test the connection.
 
   jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
   $ ssh -T git@github.com
