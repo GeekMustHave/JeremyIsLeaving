@@ -41,4 +41,19 @@ CAUTION:  The Remote Sync adds the password in plain text to the .JSON config fi
 
 === GIT Plus
 
-What a pain in the ass.  
+This is a complicated process to get SSH keys working with GIT and GitHUB.
+
+You will need to use the GIT Bash command line to perform some of these functions.
+
+.GIT BASH Command line
+
+  // See if you have a SSH key in the home directory
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+
+  $ ls -al ~/.ssh
+  total 36
+  drwxr-xr-x 1 jschust2 197121    0 Jan 12 20:22 ./
+  drwxr-xr-x 1 jschust2 197121    0 Jan 12 21:27 ../
+  -rw-r--r-- 1 jschust2 197121 3243 Jan 12 21:41 id_rsa
+  -rw-r--r-- 1 jschust2 197121  760 Jan 12 21:41 id_rsa.pub
+  -rw-r--r-- 1 jschust2 197121 1199 Jan 12 21:53 known_hosts
