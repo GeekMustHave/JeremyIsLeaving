@@ -117,3 +117,11 @@ Go back to the Windows GITBash command line in order to test the connection.
   Hi GeekMustHave! You've successfully authenticated, but GitHub does not provide shell access.
 
 Now your GIT BASH, GIT GIU and ATOM GIT Plus should all work fine.
+
+If you are using ATOM and you want to eliminate some the warning messages you can set the default `push` settings.
+The `matching` will make git push local branches to the remote branches that already exist with the same name.
+
+  jschust2@Recambio MINGW64 ~/Dropbox/BlueHost/JeremyIsLeaving (master)
+  $ git config --global push.default matching
+
+  
