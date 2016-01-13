@@ -38,3 +38,7 @@ One of the setups for this project includes the use of the ATOM text editor.
 We want to be able to use one tool for GIT, GITHub and remote HOST FTP syncing.
 
 CAUTION:  The Remote Sync adds the password in plain text to the .JSON config file.
+
+=== GIT Plus
+
+What a pain in the ass.  
